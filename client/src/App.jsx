@@ -5,14 +5,19 @@ import Cookie from 'universal-cookie';
 
 import './App.css';
 
-import {ChannelListContainer, ChannelContainer} from './components';
+import {ChannelListContainer, ChannelContainer, Auth} from './components';
 
 const apiKEY = '3hqhdwy38xpk';
 
 const client = StreamChat.getInstance(apiKEY);
 
+const authToken = false;
+
 const App = () => {
-     
+
+    if(!authToken){
+        return <Auth />
+    }
 
     return (
         <div className="app__wrapper">
