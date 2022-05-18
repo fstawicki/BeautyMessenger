@@ -32,11 +32,14 @@ const Auth = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const { fullName, userName, password, phoneNumber, avatarURL } = form;
+        // const { fullName, userName, password, phoneNumber, avatarURL } = form;
+        const { userName, password, phoneNumber, avatarURL } = form;
         const URL = 'http://localhost:5000/auth';
 
         //passing data to backend
-        const { data: {token, userId, hashedPassword} } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {userName,password,fullName,phoneNumber,avatarURL});
+        const { data: {token, userId, hashedPassword, fullName} } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
+            userName, password, fullName: form.fullName , phoneNumber, avatarURL,
+        });
     
         cookies.set('token', token);
         cookies.set('userName',userName);
@@ -143,7 +146,6 @@ const Auth = () => {
                 </div>
             </div>
         </div>
-        //TODO: CHANGE THIS BANNER IMAGE AND STYLING
         <div className='auth__form-container_image'>
             <img src={signinImage} alt="sign in" />
         </div>
