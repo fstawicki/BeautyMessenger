@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap'); */
+
 :root {
-    /* --primary-color: #005fff;
-    --primary-color-alpha: #005fff1a; */
-    --primary-color: #6f00ff;
+    /* #caa7a7 ŁĄDNY BEŻ */
+    --primary-color: #cab1b1 !important;
     --primary-color-alpha: #310072;
+  }
+  *{
+    box-sizing: border-box;
   }
   
   html,
@@ -18,35 +24,39 @@
   
   .auth__form-container {
     min-height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: row;
   }
   
   .auth__form-container_fields {
-    flex: 2;
+    width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-  
+    align-items: center;
+    
     padding: 2rem;
-    background: #005fff;
+    background: #f0c7e9;
   }
   
   .auth__form-container_image {
-    flex: 3;
+    width: 55%;
     display: flex;
     box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.05);
   }
   
-  .auth__form-container_image img {
+  .auth__form-container_image video {
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    object-fit: cover;
   }
   
   .auth__form-container_fields-content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    width: 80%;
   
     padding: 2rem;
     box-shadow: 0px 1px 5px rgb(0 0 0 / 10%);
@@ -54,12 +64,23 @@
     transition: 0.8s ease;
     background: #fff;
   }
+
+  .auth__form-container_fields-content__title{
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+    /* font-family: 'Pacifico', cursive; */
+    color: #f30acc;
+    font-weight: 900;
+    text-align: center;
+    margin: 1rem 0;
+  }
   
   .auth__form-container_fields-content p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
     color: #05245a;
-    font-weight: 900;
+    font-weight: 800;
+    margin: 0.5rem 0;
   }
   
   .auth__form-container_fields-content_input {
@@ -86,7 +107,7 @@
     font-size: 14px;
     outline: none;
     transition: all 150ms ease-in-out 0s;
-    width: 85%;
+    width: 100%;
     background: #fff;
   }
   
@@ -103,8 +124,8 @@
   
   .auth__form-container_fields-content_input input:focus,
   .auth__form-container_fields-content_input input:active {
-    box-shadow: 0px 0px 0px 1.5px #005fff;
-    border-color: #005fff;
+    box-shadow: 0px 0px 0px 1.5px #f0c7e9;
+    border-color: #f0c7e9;
   }
   
   .auth__form-container_fields-content_input-password {
@@ -115,26 +136,27 @@
   }
   
   .auth__form-container_fields-content_button {
-    margin-top: 2rem;
+    margin-top: 1.2rem;
     display: flex;
     justify-content: flex-start;
   }
   
   .auth__form-container_fields-content_button button {
     border-radius: 4px;
-    background: #005fff;
-    border: 1px solid #005fff;
+    background: #f30acc;
+    border: 1px solid #f30acc;
     color: #fff;
+    font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    padding: 0.7rem 1.2rem;
+    font-weight: 700;
+    padding: 0.75rem 3rem;
     outline: none;
     cursor: pointer;
     transition: 0.3s ease;
   }
   
   .auth__form-container_fields-content_button button:hover {
-    background: #0066ff;
+    background: #7a0367;
   }
   
   .auth__form-container_fields-account {
@@ -157,22 +179,40 @@
     font-weight: 700;
   }
   
-  @media screen and (max-width: 800px) {
-    .auth__form-container {
-      flex-direction: column-reverse;
-    }
-  
+  @media screen and (max-width: 1300px) {
+    
     .auth__form-container_fields {
       justify-content: flex-start;
     }
-  
-    .auth__form-container_image {
-      height: 100px;
-      flex: none;
-      box-shadow: none;
+
+    .auth__form-container_fields{
+      width: 55%;
     }
   
-    .auth__form-container_image img {
+    .auth__form-container_image {
+      width: 45%;
+    }
+  
+    .auth__form-container_image video {
+      object-fit: cover;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    
+    .auth__form-container_fields{
+      width: 100%;
+    }
+
+    .auth__form-container_fields-content{
+      width: 90%;
+    }
+
+    .auth__form-container_image {
+      display: none;
+    }
+  
+    .auth__form-container_image video {
       object-fit: cover;
     }
   }
@@ -190,6 +230,9 @@
       right: 3%;
     }
   }
+
+
+  /* KONIEC AUTH */
   
   .app__wrapper {
     display: flex;
@@ -436,14 +479,16 @@
   .channel-list__header {
     padding-left: 16px;
     height: 62px;
+    
   }
   
+  /* !@!!!!!!!!!!!!!!! */
+
   .channel-list__header__text {
-    font-family: Helvetica Neue, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 28px;
+    font-family: 'Dancing Script', cursive;
+  
+    font-size: 2rem;
+    line-height: 0.1rem;
     color: #ffffff;
   }
   
