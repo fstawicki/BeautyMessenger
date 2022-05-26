@@ -1,6 +1,8 @@
 :root {
-    --primary-color: #005fff;
-    --primary-color-alpha: #005fff1a;
+    /* --primary-color: #005fff;
+    --primary-color-alpha: #005fff1a; */
+    --primary-color: #6f00ff;
+    --primary-color-alpha: #310072;
   }
   
   html,
